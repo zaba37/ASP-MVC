@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "DeleteBannedWord";
+    Layout = null;
+    List<SelectListItem> items = new List<SelectListItem>();
+    items.Add(new SelectListItem
+    {
+        Text = "test1",
+        Value = "1"
+    });
+    items.Add(new SelectListItem
+    {
+        Text = "test2",
+        Value = "2",
+        Selected = true
+    });
+    items.Add(new SelectListItem
+    {
+        Text = "test3",
+        Value = "3"
+    });
+}
+
+<h2>DeleteBannedWord</h2>
+
+@using (Html.BeginForm("", "", FormMethod.Post, new { @class = "form-horizontal", role = "form" })) //tu pozniej uzupelnic
+{
+    @Html.AntiForgeryToken()
+    <h4>Delete banned word.</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.Label("Word", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownList("words", items, null, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Delete word" />
+        </div>
+    </div>
+}

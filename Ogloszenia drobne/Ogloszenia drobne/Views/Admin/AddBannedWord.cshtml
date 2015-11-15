@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "AddBannedWord";
+    Layout = null;
+}
+
+<h2>AddBannedWord</h2>
+
+@using (Html.BeginForm("", "", FormMethod.Post, new { @class = "form-horizontal", role = "form" })) //tu pozniej uzupelnic
+{
+    @Html.AntiForgeryToken()
+    <h4>Add banned word.</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.Label("Word", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBox("word",null, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Add word" />
+        </div>
+    </div>
+}

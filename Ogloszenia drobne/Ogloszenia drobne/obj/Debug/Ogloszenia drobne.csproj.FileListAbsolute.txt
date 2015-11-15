@@ -1,0 +1,55 @@
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\obj\Debug\Ogloszenia drobne.csprojResolveAssemblyReference.cache
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Ogloszenia drobne.dll.config
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Ogloszenia drobne.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Ogloszenia drobne.pdb
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Antlr3.Runtime.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\EntityFramework.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\EntityFramework.SqlServer.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Security.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Newtonsoft.Json.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Owin.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.Helpers.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.Mvc.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.Optimization.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.Razor.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.WebPages.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.WebPages.Razor.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\WebGrease.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.Helpers.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.Mvc.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.Optimization.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.Razor.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.WebPages.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.WebPages.Razor.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Antlr3.Runtime.pdb
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Newtonsoft.Json.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\EntityFramework.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\EntityFramework.SqlServer.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Security.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\obj\Debug\Ogloszenia drobne.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\obj\Debug\Ogloszenia drobne.pdb
