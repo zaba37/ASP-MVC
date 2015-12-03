@@ -95,6 +95,14 @@ namespace Ogloszenia_drobne.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        public string Address { get; set; }
+
+        public int Phone { get; set; }
+
+        public bool IsAdmin { get; set; }
+       
+        public int NumAdOnPg { get; set; } //ilosc ogloszen na stronie
     }
 
     public class ResetPasswordViewModel

@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Ogloszenia_drobne.Models
 {
-    public class ShortMessage
+    public class ShortMessageModel
     {
         [Required]
         public string Title { get; set; }

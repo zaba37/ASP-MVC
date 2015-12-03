@@ -1,4 +1,3 @@
-C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\obj\Debug\Ogloszenia drobne.csprojResolveAssemblyReference.cache
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Ogloszenia drobne.dll.config
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Ogloszenia drobne.dll
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Ogloszenia drobne.pdb
@@ -51,5 +50,6 @@ C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Sec
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\obj\Debug\Ogloszenia drobne.csprojResolveAssemblyReference.cache
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\obj\Debug\Ogloszenia drobne.dll
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\obj\Debug\Ogloszenia drobne.pdb
