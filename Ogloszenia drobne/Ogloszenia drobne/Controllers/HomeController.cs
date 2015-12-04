@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using Ogloszenia_drobne.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +10,11 @@ namespace Ogloszenia_drobne.Controllers
 {
     public class HomeController : Controller
     {
+        ApplicationDbContext db = new ApplicationDbContext();
+        
         public ActionResult Index()
         {
+        var a=    db.Advertisement.ToList();
             return View();
         }
 

@@ -25,6 +25,18 @@ namespace Ogloszenia_drobne.Models
         {
         }
 
+
+        public DbSet<Advertisement> Advertisement{ get; set; }
+        public DbSet<Attribute> Attribute { get; set; }
+        public DbSet<AttributeValue> AttributeValue { get; set; }
+        public DbSet<BannedWord> BannedWord{ get; set; }
+        public DbSet<CategoryAttribute> CategoryAttribute { get; set; }
+        public DbSet<Category> Category{ get; set; }
+        public DbSet<File> File{ get; set; }
+        public DbSet<Property> Property { get; set; }
+        public DbSet<ShortMessage> ShortMessage{ get; set; }
+
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

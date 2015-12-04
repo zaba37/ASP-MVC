@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Ogloszenia_drobne.Models;
+
 
 namespace Ogloszenia_drobne.Controllers
 {
     public class AdminController : Controller
     {
+      
         // GET: Admin
         public ActionResult Index()
-        {
+        {          
             return View();
         }
 
@@ -21,6 +24,7 @@ namespace Ogloszenia_drobne.Controllers
 
         public ActionResult DeleteBannedWord()
         {
+            
             return View();
         }
 
