@@ -9,7 +9,8 @@ namespace Ogloszenia_drobne.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Ogloszenia_drobne.Models.ApplicationDbContext context)

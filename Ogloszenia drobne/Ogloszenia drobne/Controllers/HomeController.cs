@@ -15,6 +15,8 @@ namespace Ogloszenia_drobne.Controllers
         public ActionResult Index()
         {
         var a=    db.Advertisement.ToList();
+    
+            
             return View();
         }
 

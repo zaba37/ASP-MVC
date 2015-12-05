@@ -10,7 +10,7 @@ namespace Ogloszenia_drobne.Models
     {
         [Key]
         public int AdvertisementId { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         public int CategoryId { get; set; }
        
@@ -27,7 +27,7 @@ namespace Ogloszenia_drobne.Models
         public bool Reported { get; set; }
 
 
-        public virtual RegisterViewModel User { get; set; }
+        public virtual ApplicationUser User { get; set; }
         public virtual Category Category { get; set; }
         public virtual ICollection<File> Files { get; set; }
 

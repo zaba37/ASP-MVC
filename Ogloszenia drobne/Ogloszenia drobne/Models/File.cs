@@ -10,7 +10,7 @@ namespace Ogloszenia_drobne.Models
     {
        [Key] 
         public int FileId { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         
         public string Path { get; set; }
 
@@ -18,6 +18,6 @@ namespace Ogloszenia_drobne.Models
 
         public bool InDetails { get; set; } //czy plik bedzie wyswietlany czy jako zalacznik do pobrania
 
-        public virtual RegisterViewModel User { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }
