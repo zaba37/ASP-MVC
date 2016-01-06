@@ -10,13 +10,10 @@ namespace Ogloszenia_drobne.Controllers
 {
     public class HomeController : Controller
     {
-        ApplicationDbContext db = new ApplicationDbContext();
+
         
         public ActionResult Index()
-        {
-        var a=    db.Advertisement.ToList();
-    
-            
+        {           
             return View();
         }
 

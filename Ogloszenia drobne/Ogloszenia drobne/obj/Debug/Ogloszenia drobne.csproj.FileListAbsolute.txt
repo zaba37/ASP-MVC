@@ -27,6 +27,8 @@ C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.WebPage
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.WebPages.dll
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.WebPages.Razor.dll
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\WebGrease.dll
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\EntityFramework.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\EntityFramework.SqlServer.xml
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.Helpers.xml
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.Mvc.xml
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.Optimization.xml
@@ -36,8 +38,6 @@ C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.WebPage
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\System.Web.WebPages.Razor.xml
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Antlr3.Runtime.pdb
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Newtonsoft.Json.xml
-C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\EntityFramework.xml
-C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\EntityFramework.SqlServer.xml
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.AspNet.Identity.EntityFramework.xml
@@ -50,8 +50,8 @@ C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Sec
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\obj\Debug\Ogloszenia_drobne.Migrations.init.resources
+C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\obj\Debug\Ogloszenia drobne.csproj.GenerateResource.Cache
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\obj\Debug\Ogloszenia drobne.dll
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\obj\Debug\Ogloszenia drobne.pdb
 C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\obj\Debug\Ogloszenia drobne.csprojResolveAssemblyReference.cache
-C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\obj\Debug\Ogloszenia_drobne.Migrations.init.resources
-C:\Users\Pepe\ASP-MVC\Ogloszenia drobne\Ogloszenia drobne\obj\Debug\Ogloszenia drobne.csproj.GenerateResource.Cache

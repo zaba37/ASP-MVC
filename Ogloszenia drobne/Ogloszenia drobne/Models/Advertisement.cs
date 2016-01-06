@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -30,6 +31,13 @@ namespace Ogloszenia_drobne.Models
         public virtual ApplicationUser User { get; set; }
         public virtual Category Category { get; set; }
         public virtual ICollection<File> Files { get; set; }
+
+       
+        
+        [NotMapped]
+
+        public List<Category> CategoryList { get; set; }
+
 
     }
 }

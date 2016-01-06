@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Ogloszenia_drobne.Models;
+using System.Collections.Generic;
 
 namespace Ogloszenia_drobne.Controllers
 {
@@ -151,8 +152,14 @@ namespace Ogloszenia_drobne.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };// { UserName = model.Login };// { UserName = model.Email, Email = model.Email };                      
+                
+                user.AdvOnPg = 20;
+                user.Email = model.Email;
+                
+                
                 var result = await UserManager.CreateAsync(user, model.Password);
+                
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
@@ -403,6 +410,38 @@ namespace Ogloszenia_drobne.Controllers
             return View();
         }
 
+
+
+
+        [HttpGet]
+        public ActionResult EditUser(string id)
+        {
+            var db = new ApplicationDbContext();
+            ApplicationUser usr;
+            if(id!=null)
+            {
+                usr = db.Users.FirstOrDefault(m => m.Id == id);
+                
+            }
+
+            else
+            {
+                return HttpNotFound();
+            }
+            return View(usr);
+        }
+
+        [HttpPost]
+        public ActionResult EditUser(ApplicationUser usr)
+        {
+            var db = new ApplicationDbContext();
+            ApplicationUser user = db.Users.FirstOrDefault(m => m.Id == usr.Id); ;
+            user.Email = usr.Email;
+            user.AdvOnPg = usr.AdvOnPg;
+            user.PhoneNumber = usr.PhoneNumber;
+            db.SaveChanges();
+            return View();
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -422,6 +461,11 @@ namespace Ogloszenia_drobne.Controllers
 
             base.Dispose(disposing);
         }
+
+
+
+ 
+
 
         #region Helpers
         // Used for XSRF protection when adding external logins

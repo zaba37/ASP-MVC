@@ -26,6 +26,15 @@ namespace Ogloszenia_drobne
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/file").Include(
+                      "~/Scripts/jquery.blockUI.js",
+                      "~/Scripts/jquery.form.js",
+                      "~/Scripts/jquery.MetaData.js",
+                      "~/Scripts/jquery.MultiFile.js",
+                      "~/Scripts/jquery.MultiFile2.js",
+                      "~/Scripts/jquery.js"
+                      ));
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Ogloszenia_drobne.Models
@@ -79,11 +80,7 @@ namespace Ogloszenia_drobne.Models
         [Required]
         [Display(Name = "Name")]
         public string Name { get; set; }
-
-
-        [Required]
-        [Display(Name = "Surname")]
-        public string Surname { get; set; }
+    
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
@@ -96,13 +93,26 @@ namespace Ogloszenia_drobne.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        public string Address { get; set; }
+
 
         public int Phone { get; set; }
-
-        public bool IsAdmin { get; set; }
        
-        public int NumAdOnPg { get; set; } //ilosc ogloszen na stronie
+        public int AdvOnPg { get; set; } //ilosc ogloszen na stronie
+    }
+
+
+    public class EditUserViewModel
+    {
+        Guid Id {get;set;} 
+        
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+        [Required]
+        public int PhoneNumber { get; set; }
+        [Required]
+        public int AdvOnPg{get;set;}
     }
 
     public class ResetPasswordViewModel

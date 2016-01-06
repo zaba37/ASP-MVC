@@ -17,15 +17,40 @@ namespace Ogloszenia_drobne.Controllers
             return View();
         }
 
-        public ActionResult AddBannedWord ()
+        [HttpPost]
+        public ActionResult AddBannedWord (BannedWord bannedWord)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                using (var db = new ApplicationDbContext())
+                {
+                    db.BannedWord.Add(bannedWord);
+                    db.SaveChanges();
+                }
+            }
+
+
+            return RedirectToAction("BannedWords");
         }
 
-        public ActionResult DeleteBannedWord()
+        [HttpPost]
+        public ActionResult DeleteBannedWord(BannedWord bannedWord)
         {
-            
-            return View();
+            try
+            {              
+                    using (var db = new ApplicationDbContext())
+                    {
+                        var word = db.BannedWord.FirstOrDefault(m => m.BannedWordId == bannedWord.BannedWordId);
+                        db.BannedWord.Remove(word);
+                        db.SaveChanges();
+                    }               
+            }
+
+            catch
+            {
+
+            }
+            return RedirectToAction("BannedWords");
         }
 
         public ActionResult AddShortMessage()
@@ -35,6 +60,79 @@ namespace Ogloszenia_drobne.Controllers
         public ActionResult EditShortMessage()
         {
             return View();
+        }
+
+        public ActionResult BannedWords()
+        {
+            var db = new ApplicationDbContext();
+            List<SelectListItem> listItems = new List<SelectListItem>();
+            foreach(var item in db.BannedWord)
+            {
+                listItems.Add(new SelectListItem
+                {
+                    Text =item.Word,
+                    Value = item.BannedWordId.ToString()
+                });
+            }
+            ViewBag.WordList = listItems;
+
+            return View();
+        }
+        public ActionResult Users()
+        {
+            var db = new ApplicationDbContext();
+
+            return View(db.Users.ToList());
+        }
+        [HttpPost]
+        public ActionResult DeleteUser(string id)
+        {
+            try
+            {
+                using (var db = new ApplicationDbContext())
+                {
+                    ApplicationUser usr = db.Users.FirstOrDefault(m => m.Id == id);
+
+                    db.Users.Remove(usr);
+                    db.SaveChanges();
+                }
+            }
+            catch
+            {
+                return RedirectToAction("Users");
+            }
+           return RedirectToAction("Users");
+        }
+
+        public ActionResult EditUser(string id)
+        {
+            var db = new ApplicationDbContext();
+            ApplicationUser usr;
+            if (id != null)
+            {
+                usr = db.Users.FirstOrDefault(m => m.Id == id);
+
+            }
+
+            else
+            {
+                return HttpNotFound();
+            }
+            return View(usr);
+        }
+
+
+        [HttpPost]
+        public ActionResult EditUser(ApplicationUser usr)
+        {
+
+            var db = new ApplicationDbContext();
+            ApplicationUser user = db.Users.FirstOrDefault(m => m.Id == usr.Id); ;
+            user.Email = usr.Email;
+            user.AdvOnPg = usr.AdvOnPg;
+            user.PhoneNumber = usr.PhoneNumber;
+            db.SaveChanges();
+            return RedirectToAction("Users");
         }
     }
 }

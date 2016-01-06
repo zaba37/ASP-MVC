@@ -1,0 +1,25 @@
+﻿@model Ogloszenia_drobne.Models.Advertisement
+@{
+    ViewBag.Title = "Details";
+    
+    
+}
+
+<h2>Details</h2>
+
+@Model.Content
+<br/>
+
+@{
+    foreach (var file in Model.Files)
+    {
+        <text>
+            <a href="/Advertisement/Download?nameFile=@file.Path">zalacznik</a>
+                
+        </text>
+    }
+
+   
+    @Html.ActionLink("Edytuj ogloszenie", "Edit", new { id = Model.AdvertisementId })
+
+}

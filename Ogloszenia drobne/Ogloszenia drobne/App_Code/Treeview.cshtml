@@ -1,0 +1,27 @@
+﻿@helper GetTreeView(List<Ogloszenia_drobne.Models.Category> category, int parent)
+{
+    foreach (var i in category.Where(a => a.Parent.Equals(parent)))
+    {
+        <li>
+            @{var submenu = category.Where(a => a.Parent.Equals(i.CategoryId)).Count();}
+            @if (submenu > 0)
+            {
+                <span class="collapse collapsible">&nbsp;</span>
+            }
+            else
+            {
+                <span style="width:15px; display:inline-block">&nbsp;</span>
+            }
+            <span>
+                <input type="radio" name="cat" id="cat" value="@i.CategoryId">@i.Name<br>
+            </span>
+            @if (submenu > 0)
+            {
+                <ul>
+                    @Treeview.GetTreeView(category, i.CategoryId)
+                    @* Recursive  Call for Populate Sub items here*@
+                </ul>
+            }
+        </li>
+    }
+}

@@ -1,0 +1,146 @@
+﻿@model Ogloszenia_drobne.Models.Advertisement
+
+@{
+    ViewBag.Title = "Edit";
+    int numfile;
+    int numfile2;
+   
+
+    numfile= ViewBag.NumberFile;
+    numfile2 = ViewBag.NumberFile2;
+    
+
+    @Scripts.Render("~/bundles/file")
+}
+
+<h2>Edit</h2>
+
+<script type="text/javascript">
+        var count = 0;
+        $(function (ready) {
+            $('#fileUpload_wrap').change(function () {
+
+
+
+            var str = count.toString();
+            var newTextBoxDiv = $(document.createElement('div'))
+             .attr("id", 'TextBoxDiv');
+
+            newTextBoxDiv.after().html('<input type="textarea" name="description" id="description'+str+'"/>');
+
+            newTextBoxDiv.appendTo('#mul'+str);
+            count++;
+
+    });
+    });
+
+
+        $(function () {
+            $('.treeview li').hide();
+
+            $('.treeview li:first-child').show();
+
+
+            $('.treeview li').on('click', function (e) {
+                var children = $(this).find('> ul > li');
+                if (children.is(":visible")) children.hide('fast');
+                else children.show('fast');
+                e.stopPropagation();
+            });
+        });
+
+
+</script>
+
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Advertisement</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.Label("Pliki (format jpg,png,mp3)", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" id="fileUpload2" name="fileUpload2" class="multisecond" maxlength="@numfile2" />
+            </div>
+        </div>
+        @{
+               foreach (var file in Model.Files)
+               {
+                 if (file.InDetails == true)
+                 {
+  
+                  string name =file.Path.Split(new char[] {@"/"[0]}).Last();
+                  <text>
+                @name   <a href="/Advertisement/DeleteFile?idFile=@file.FileId&idAdv=@Model.AdvertisementId">Usuń plik</a>
+                  <br />
+                  </text>
+                 }
+               }    
+        }
+
+
+        <div class="form-group">
+            @Html.Label("Pliki jako załaczniki", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" id="fileUpload" name="fileUpload" class="multi" maxlength="@numfile" />
+            </div>
+        </div>
+        @{
+            foreach(var file in Model.Files)
+            {
+                if(file.InDetails==false)
+                {
+                    <text>
+                         <a href="/Advertisement/DeleteFile?idFile=@file.FileId&idAdv=@Model.AdvertisementId">Usuń załącznik</a>
+                         <br/>
+                         <input type="textarea" name="description" value="@file.Description" id="description" readonly="true" />
+                         <br/><br />
+                    </text>
+                }
+            }
+        }
+
+        <div style="border:solid 1px black; padding:10px; background-color:#FAFAFA">
+            <div class="treeview">
+                @if (Model.CategoryList != null && Model.CategoryList.Count() > 0)
+                {
+                    <ul>
+                        @Treeview.GetTreeView(Model.CategoryList, Model.CategoryList.FirstOrDefault().Parent)
+                    </ul>
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+
+
+}
