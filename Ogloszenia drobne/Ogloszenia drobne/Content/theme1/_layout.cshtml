@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0; width: 100%}
+    .tg td{font-family:Arial, sans-serif;font-size:14px;padding:14px 13px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+    .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:14px 13px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+    .tg .tg-qsvf{font-size:18px;vertical-align:top}
+    .tg .tg-2ktp{font-size:16px;vertical-align:top}
+    .tg .tg-3iwn{font-weight:bold;font-style:italic;font-size:24px;background-color:#528ccc;color:#ffffff;vertical-align:top}
+</style> 
+
+<html>
+    <head>
+        <title>@ViewBag.Title</title>
+        <meta name="description" content="free website template" />
+        <meta name="keywords" content="enter your keywords here" />
+        <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+            <script type="text/javascript" src="js/jquery.min.js"></script>
+            <script type="text/javascript" src="js/image_slide.js"></script>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        </head>
+
+        <body>
+            <div id="header_container">  
+                <div id="header">
+                    <div id="banner">
+                        <h1><span>Ogłosze</span>nia</h1>
+                    </div><!--close banner-->	
+                    <div id="banner_slogan">
+                        <h2> </h2>
+                    </div><!--close banner_slogan-->	
+                    <div id="menubar">
+                        <ul id="menu">
+                            <li class="current"><a href="index.jsp">1</a></li>
+                            <li><a href="showAllAd">1</a></li>
+                            <li><a href="register">1</a></li>
+                            <li><a href="showYourAd">1</a></li>
+                            <li><a href="addNewAd">1</a></li>
+                            <li><a href="profil">1</a></li>
+                            <li><a href="allUsers">1</a></li>
+                            <li><a href="createAdminMsg">1</a></li>
+                    </ul>
+                </div><!--close menubar-->  
+            </div><!--close header-->  
+        </div><!--close header_container-->  
+        <div id="main">
+            <div id="site_content">	
+                <div class="sidebar_container">       
+                    <div class="sidebar">
+                            <h2>Zaloguj się</h2>
+                            <div class="sidebar_item">
+                                @Html.Partial("_LoginPartial")
+                            </div><!--close sidebar_item--> 
+                        </div><!--close sidebar-->         
+                       <div class="sidebar">
+                            <h2>Latest Blog</h2>
+                            <div class="sidebar_item">
+                                <h4>March 2012</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim.</p>
+                                <div class="button_small">
+                                    <a href="#">Read more</a>
+                                </div><!--close button_small-->
+                            </div><!--close sidebar_item--> 
+                        </div><!--close sidebar-->  
+                    </div><!--close sidebar_container-->
+
+                    <div id="content">
+                        <div class="content_item">
+                            @RenderBody()
+                        </div><!--close content_item-->
+                    </div><!--close content-->
+                </div><!--close site_content-->    
+            </div><!--close main--> 
+            <div id="footer_container">     
+                <div id="footer">
+                    <a href="http://validator.w3.org/check?uri=referer">Valid XHTML</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a> | <a href="http://fotogrph.com/">Images</a> | website template by <a href="http://www.araynordesign.co.uk">ARaynorDesign</a>
+                </div><!--close footer-->
+            </div><!--close footer_container-->  
+    </body>
+</html>
