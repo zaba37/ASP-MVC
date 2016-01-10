@@ -13,7 +13,9 @@ namespace Ogloszenia_drobne.Models
         public int CategoryId { get; set; }
         public string Name { get; set; }
 
+     
         public int Parent { get; set; }
+        
         public ICollection<CategoryAttribute> CategoriesAttributes { get; set; }
 
 

@@ -1,105 +1,30 @@
-﻿@model List<Ogloszenia_drobne.Models.Advertisement>
- 
-@using Newtonsoft.Json
-@{
+﻿@model List<ogloszenia_drobne.models.advertisement>
 
-    ViewBag.Title = "Advertisements";
-    int num = ViewBag.NumAdv;
+
+    @{
+
+
+    int num = 20;
 
     var grid = new WebGrid(canPage: true, rowsPerPage: num, canSort: true
 );
     grid.Pager(WebGridPagerModes.All);
     grid.Bind(Model);
 
-    List<Ogloszenia_drobne.Models.Category> catList;
-    catList = ViewBag.cat;
-
-}
-
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/bootstrap")
 
 
-
-
-
-
-
-
-<style type="text/css">
-    /*Here we will add css for style webgrid*/
-    .webgrid-table {
-        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-        font-size: 1.1em;
-        width: 100%;
-        display: table;
-        border-collapse: separate;
-        border: solid 1px #98BF21;
-        background-color: white;
-        overflow-wrap: break-word;
-    }
-
-        .webgrid-table td, th {
-            border: 1px solid #98BF21;
-            padding: 0px 0px 0px;
-        }
-
-    .webgrid-header {
-        background-color: #A7C942;
-        color: #FFFFFF;
-        padding-bottom: 2px;
-        padding-top: 3px;
-        text-align: left;
-    }
-
-    .webgrid-footer {
-    }
-
-    .webgrid-row-style {
-        padding: 0px 0px 0px;
-    }
-
-    .webgrid-alternating-row {
-        background-color: #EAF2D3;
-        padding: 0px 0px 0px;
-    }
-
-    .col-sm {
-        min-width: 80px;
     }
 
 
 
-    div.address span {
-        display: none;
-        padding: 2px 3px;
-        margin-left: 8px;
-        width: 130px;
-    }
-
-    img {
-        border: none;
-    }
-
-    div.address:hover span {
-        display: inline;
-        position: absolute;
-        margin: 15px 0 0 5px;
-        background: #dddddd;
-        border: 1px solid #b30000;
-        color: #000000;
-        -moz-opacity: 0.8;
-        opacity: .80;
-        filter: alpha(opacity=80);
-        text-align: center;
-    }
-</style>
 
 
 
 
 
-@grid.GetHtml(
+
+
+    @grid.GetHtml(
                 htmlAttributes: new { id = "grid" },
                 tableStyle: "webgrid-table",
                 headerStyle: "webgrid-header",
@@ -146,43 +71,3 @@
 
 
 
-
-<div style="border:solid 1px black; padding:10px; background-color:#FAFAFA">
-    <div class="treeview">
-        @if (catList != null && catList.Count() > 0)
-        {
-            <ul>
-                @Treeview.GetTreeView(catList, catList.FirstOrDefault().Parent)
-            </ul>
-        }
-    </div>
-</div>
-
-<script>
-
-    $(".catin").click(function () {
-       
-        var valueID = $(this).val();
-        
-        $("#grid").remove();
-
-            $.ajax(
-            {
-                type: "Post",
-                url: '/Advertisement/Filter',
-                data: { idCat: valueID },
-                success: function (result) {
-                    
-                    //var html = $(result);
-                    //$("html").replaceWith(("html", html));
-
-
-
-                },
-                error: function (err, result) {
-                    
-                }
-            });
-        
-    });
-</script>

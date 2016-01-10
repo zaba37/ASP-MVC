@@ -21,5 +21,13 @@
 
    
     @Html.ActionLink("Edytuj ogloszenie", "Edit", new { id = Model.AdvertisementId })
+    if(Model.Reported==true)
+    {
+        <text>Ogłoszenie zostało zgłoszone do moderacji</text>
+    }
+    else
+    {
+        @Html.ActionLink("Zgłoś ogłoszenie do moderacji", "Report", new { id = Model.AdvertisementId })
+    }
 
 }

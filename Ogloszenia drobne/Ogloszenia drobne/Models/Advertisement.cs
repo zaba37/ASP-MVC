@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Ogloszenia_drobne.Models
 {
@@ -19,8 +20,10 @@ namespace Ogloszenia_drobne.Models
         public string Title { get; set; }
 
         [Required]
+        [AllowHtml]
         public string Content { get; set; }
-
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString="{0:dd-MM-yyyy}",ApplyFormatInEditMode=true)]
         public DateTime AddedDate { get; set; }
 
         public int VisitCounter { get; set; }

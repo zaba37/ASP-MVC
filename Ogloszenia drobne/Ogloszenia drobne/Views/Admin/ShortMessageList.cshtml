@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Ogloszenia_drobne.Models.ShortMessage>
+
+@{
+    ViewBag.Title = "Wiadomości";
+}
+
+<h2>Wiadomości</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddedDate)
+        </th>
+        <th>Akcja</th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddedDate)
+            </td>
+
+            <td>
+                @using (Html.BeginForm("", "", FormMethod.Post))
+                {
+                    <input type="submit" value="Usuń" formaction="/Admin/DeleteShortMessage/@item.ShortMessageId" />
+
+                }
+                @using (Html.BeginForm("", "", FormMethod.Get))
+                {
+                    <input type="submit" value="Edytuj" formaction="/Admin/EditShortMessage/@item.ShortMessageId" />
+                }
+
+
+            </td>
+        </tr>
+    }
+
+</table>

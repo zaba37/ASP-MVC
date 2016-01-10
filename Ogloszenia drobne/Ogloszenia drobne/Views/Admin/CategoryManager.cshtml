@@ -1,0 +1,100 @@
+﻿@model List<Ogloszenia_drobne.Models.Category>
+@{
+    ViewBag.Title = "Zarządzanie kategoriami";
+
+}
+@Scripts.Render("~/bundles/jquery")
+<h2>Zarządzanie kategoriami</h2>
+
+
+
+
+
+@using (Html.BeginForm("AddCategory", "Admin", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.Label("Wpisz kategorie", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" name="nameCat" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Dodaj kategorię jako główną" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+
+<div style="border:solid 1px black; padding:10px; background-color:#FAFAFA">
+    <div class="treeview">
+        @if (Model != null && Model.Count() > 0)
+        {
+            <ul>
+                @CategoryManagerTree.GetTreeCategoryManager(Model, Model.FirstOrDefault().Parent)              
+            </ul>
+        }
+    </div>
+</div>
+
+
+<script>
+
+
+    $(".btnek").click(function ()
+    {
+        var textboxvalue = $('input[name=nameCat]').val();
+        var idek = this.id;
+        if (textboxvalue != null || textboxvalue != "") {
+            $.ajax(
+            {
+                type: "POST",
+                url: '/Admin/AddCategory',
+                data: { nameCat: textboxvalue, id:idek},
+                success: function (result) {
+                    location.reload()
+                },
+                error: function (err, result) {
+                    alert("Error in add" + err.responseText);
+                }
+            });
+        }
+        else {
+            alert("Wpisz kategorie!");
+        }
+    });
+
+
+
+    $(".btnek2").click(function () {
+        var idek = this.id;
+            $.ajax(
+            {
+                type: "POST",
+                url: '/Admin/DeleteCategory',
+                data: {id: idek },
+                success: function (result) {
+                    location.reload()
+                },
+                error: function (err, result) {
+                    alert("Error in add" + err.responseText);
+                }
+            });
+        });
+
+
+
+
+
+
+</script>

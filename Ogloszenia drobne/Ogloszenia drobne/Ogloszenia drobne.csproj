@@ -203,6 +203,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="App_Code\Treeview.cshtml" />
+    <Content Include="App_Code\CategoryManagerTree.cshtml" />
+    <Content Include="App_Code\gridView.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -263,6 +265,9 @@
     <Content Include="Views\Account\EditUser.cshtml" />
     <Content Include="Views\Admin\Users.cshtml" />
     <Content Include="Views\Admin\EditUser.cshtml" />
+    <Content Include="Views\Admin\ShortMessageList.cshtml" />
+    <Content Include="Views\Admin\CategoryManager.cshtml" />
+    <Content Include="Views\Admin\ReportedAdvertisements.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\RoleUser\" />

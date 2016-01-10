@@ -11,13 +11,15 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using System.IO;
 using System.Text.RegularExpressions;
+using Ogloszenia_drobne.Migrations;
 namespace Ogloszenia_drobne.Controllers
 {
     public class AdvertisementController : Controller
     {
         // GET: Advertisement
-        public ActionResult Index()
+        public ActionResult Index(string page, int? idCat)
         {
+           
             var db = new ApplicationDbContext();
             if(User.Identity.IsAuthenticated)
             {
@@ -29,10 +31,31 @@ namespace Ogloszenia_drobne.Controllers
             {
                 ViewBag.NumAdv = 20;
             }
-            return View(db.Advertisement.ToList());
+
+            var Categories = db.Category.ToList();
+            ViewBag.cat = Categories;
+            if (idCat != null)
+            {
+
+                List<Advertisement> adv = findAdvertisements((int)idCat);
+                return View(adv);
+            }
+            else
+                return View(db.Advertisement.ToList());
         }
 
+
+        public ActionResult Filter (int? idCat)
+        {
+            var db = new ApplicationDbContext();
+            var Categories = db.Category.ToList();
+            ViewBag.NumAdv = 1;
+            ViewBag.cat = Categories;
+            return View("Index", db.Advertisement.Where(m => m.CategoryId == idCat).ToList());
+
+        }
         // GET: Advertisement/Details/5
+       
         public ActionResult Details(int id)
         {
             var db = new ApplicationDbContext();
@@ -53,6 +76,7 @@ namespace Ogloszenia_drobne.Controllers
 
         // POST: Advertisement/Create
         [HttpPost]
+        
         public ActionResult Create(Advertisement advertisement, HttpPostedFileBase[] fileUpload2, HttpPostedFileBase[] fileUpload, string[] description, int? cat) 
         {
            
@@ -245,6 +269,43 @@ namespace Ogloszenia_drobne.Controllers
             return RedirectToAction("Edit", new { id = idAdv });
         }
 
+
+        public ActionResult Report(int id)
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                Advertisement adv = db.Advertisement.FirstOrDefault(m => m.AdvertisementId == id);
+                adv.Reported = true;
+                db.SaveChanges();
+            }
+
+          return  RedirectToAction("Details", new { id = id });
+        }
+
+
+        private List<Advertisement> findAdvertisements(int cat)
+        {
+            var db = new ApplicationDbContext();
+            List<Advertisement> advs = db.Advertisement.Where(m => m.CategoryId == cat).ToList();//new List<Advertisement>();
+            
+            List<int> listId = new List<int>();
+            List<Advertisement> helpList = db.Advertisement.ToList();
+            listId.Add(cat);
+            while(listId.Count>0)
+            {
+                foreach (var ad in helpList)
+                {
+                    if(ad.Category.Parent==listId[0])
+                    {
+                        advs.Add(ad);
+                        listId.Add(ad.Category.CategoryId);
+                    }
+                }
+                listId.RemoveAt(0);
+            }
+            return advs;
+
+        }
 
         public JsonResult test(int? time)
         {

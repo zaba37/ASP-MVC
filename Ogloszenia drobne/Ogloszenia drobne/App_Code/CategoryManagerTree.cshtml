@@ -1,5 +1,6 @@
-﻿@helper GetTreeView(List<Ogloszenia_drobne.Models.Category> category, int parent)
+﻿@helper GetTreeCategoryManager(List<Ogloszenia_drobne.Models.Category> category, int parent)
 {
+
     foreach (var i in category.Where(a => a.Parent.Equals(parent)))
     {
         <li>
@@ -12,16 +13,22 @@
             {
                 <span style="width:15px; display:inline-block">&nbsp;</span>
             }
-            <span>
-                <a href="/Advertisement/Index?idCat=@i.CategoryId">@i.Name</a>
+            <span>                
+                @i.Name
+                <input type="submit" class="btnek" id="@i.CategoryId" value="Dodaj" />
+                <input type="submit" class="btnek2" id="@i.CategoryId" value="Usuń" />               
+
+                
+                <br/>
             </span>
             @if (submenu > 0)
             {
                 <ul>
-                    @Treeview.GetTreeView(category, i.CategoryId)
+                    @CategoryManagerTree.GetTreeCategoryManager(category, i.CategoryId)
                     @* Recursive  Call for Populate Sub items here*@
                 </ul>
             }
         </li>
+        
     }
 }
