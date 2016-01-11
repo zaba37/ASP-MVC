@@ -66,6 +66,8 @@ namespace Ogloszenia_drobne.Controllers
         }
 
         // GET: Advertisement/Create
+
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
           var db = new ApplicationDbContext();

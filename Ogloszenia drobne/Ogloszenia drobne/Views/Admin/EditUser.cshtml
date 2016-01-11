@@ -36,6 +36,8 @@
             @Html.TextBoxFor(m => m.AdvOnPg, new { @class = "form-control" })
         </div>
     </div>
+    @Html.CheckBox("admin", (bool)ViewBag.admin)<text>Administrator</text><br />
+    @Html.CheckBox("user", (bool)ViewBag.user)<text>Zwykły użytkownik</text>
     @Html.HiddenFor(m => m.Id)
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">

@@ -122,7 +122,7 @@ namespace Ogloszenia_drobne.Models
         {
             var rm = LocalRoleManager;
             var idResult = rm.Create(new IdentityRole(name));
-
+            
             return idResult.Succeeded;
         }
 
@@ -140,10 +140,29 @@ namespace Ogloszenia_drobne.Models
         {
             var um = LocalUserManager;
             var idResult = um.AddToRole(userId, roleName);
-
+            
             return idResult.Succeeded;
         }
 
+        public bool RemoveFromRole(string userId,string roleName)
+        {
+            var um = LocalUserManager;
+            var idResult = um.RemoveFromRole(userId, roleName);
+            
+            return idResult.Succeeded;
+        }
+
+        public IList<string> GetUserRoles(string userId)
+        {
+            var um = LocalUserManager;           
+            return um.GetRoles(userId);
+        }
+
+        public bool InRole(string userId,string roleName)
+        {
+             var um = LocalUserManager;
+             return um.IsInRole(userId, roleName);
+        }
 
         public bool AddUserToRoleByUsername(string username, string roleName)
         {

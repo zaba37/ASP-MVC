@@ -25,8 +25,8 @@ namespace Ogloszenia_drobne.Controllers
         {
             IdentityManager im = new IdentityManager();
 
-            im.AddUserToRoleByUsername("Maciek", "Admin");
-            im.AddUserToRoleByUsername("Piotrek", "User");
+            im.AddUserToRoleByUsername("abc@op.pl", "Admin");
+         
 
             return "Role przypisane";
         }

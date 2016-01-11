@@ -166,7 +166,28 @@ namespace Ogloszenia_drobne.Controllers
             if (id != null)
             {
                 usr = db.Users.FirstOrDefault(m => m.Id == id);
+                var im = new IdentityManager();
+                IList<string> Roles = im.GetUserRoles(usr.Id);
+                foreach(var item in Roles)
+                {
+                    if(item=="Admin")
+                    {
+                        ViewBag.admin = true;
+                    }
+                    if (item == "User")
+                    {
+                        ViewBag.user = true;
+                    }
+                }
 
+                if(ViewBag.admin==null)
+                {
+                    ViewBag.admin = false;
+                }
+                if (ViewBag.user == null)
+                {
+                    ViewBag.user = false;
+                }
             }
 
             else
@@ -178,15 +199,35 @@ namespace Ogloszenia_drobne.Controllers
 
 
         [HttpPost]
-        public ActionResult EditUser(ApplicationUser usr)
+        public ActionResult EditUser(ApplicationUser usr,bool user,bool admin)
         {
-
+            var im = new IdentityManager();
             var db = new ApplicationDbContext();
-            ApplicationUser user = db.Users.FirstOrDefault(m => m.Id == usr.Id); ;
-            user.Email = usr.Email;
-            user.AdvOnPg = usr.AdvOnPg;
-            user.PhoneNumber = usr.PhoneNumber;
+            ApplicationUser userEdit = db.Users.FirstOrDefault(m => m.Id == usr.Id); ;
+            userEdit.Email = usr.Email;
+            userEdit.AdvOnPg = usr.AdvOnPg;
+            userEdit.PhoneNumber = usr.PhoneNumber;          
             db.SaveChanges();
+            if(!user&&im.InRole(usr.Id,"User"))
+            {
+                im.RemoveFromRole(usr.Id, "User");
+            }
+
+            if (user && !im.InRole(usr.Id, "User"))
+            {
+                im.AddUserToRole(usr.Id, "User");
+            }
+
+            if (!admin && im.InRole(usr.Id, "Admin"))
+            {
+                im.RemoveFromRole(usr.Id, "Admin");
+            }
+
+            if (user && !im.InRole(usr.Id, "Admin"))
+            {
+                im.AddUserToRole(usr.Id, "Admin");
+            }
+
             return RedirectToAction("Users");
         }
 

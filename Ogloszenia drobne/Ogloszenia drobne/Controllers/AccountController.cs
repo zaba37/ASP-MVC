@@ -156,6 +156,7 @@ namespace Ogloszenia_drobne.Controllers
                 
                 user.AdvOnPg = 20;
                 user.Email = model.Email;
+                user.Discriminator = "User";
                 
                 
                 var result = await UserManager.CreateAsync(user, model.Password);
@@ -169,7 +170,9 @@ namespace Ogloszenia_drobne.Controllers
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    IdentityManager im = new IdentityManager();
 
+                    im.AddUserToRoleByUsername(user.UserName, "User");
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);
