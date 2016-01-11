@@ -1,0 +1,19 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+        <h2>Logged</h2>
+        <div class="sidebar_item">
+            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+        </div><!--close sidebar_item-->
+    }
+}
+else
+{
+    <h2>Not logged</h2>
+    <div class="sidebar_item">
+        Jesteś na stronie jako gość.
+    </div><!--close sidebar_item-->
+}
